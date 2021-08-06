@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background: rgb(224, 224, 224);
+    margin: 0;
+}
+.navbide{
+    padding: 1em;
+    background: white;
+}
+.navbide i{
+    font-size: 2em;
+}
+.navbide .logo{
+    text-decoration: none;
+    font-weight: bold;
+    color: back;
+    font-size: 1.2em;
+}
+.navbide .logo span{
+    color: rgb(39, 39, 247);
+}
+nav{
+    display: none;
+}
+a{
+    color: #444444;
+}
+ul{
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+}
+
+
+
+.navbide .container{
+    
+    display: flex;
+    place-content: space-between;
+}
+.navbide .container .mobile-menu{
+    cursor: pointer;
+}
+
+.hero .container .right-col .colunm{
+    display: flex;
+}
+.hero .container .right-col .colunm p{
+    padding: 5px;
+}
+.hero .container .right-col .space{
+    padding-left: 5px;
+    
+}
+.hero{
+    position: relative;
+}
+.hero .container .bg-covid{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+.hero .container .right-col{
+    position: absolute;
+    top:5%;
+    right:0;
+    color:  rgb(0, 0, 0);
+    font-size:0.75em;
+}
+.hero .container .right-col .colunm{
+    flex-direction: column;
+}
+.hero .container .left-col .content{
+    font-size: 0.7em;
+    margin: 0 0 15px;
+}
+
+.hero .container .left-col{
+    position: absolute;
+    top:8%;
+    left:2%;
+    color:  rgb(0, 0, 0);
+    font-size: 1em;
+}
+.underline{
+    border-bottom: 1px solid rgb(56, 55, 55);
+}
+nav.menu-btn{
+    display: block;
+}
+nav{
+    position: fixed;
+    z-index: 999;
+    width: auto;
+    left: 0;
+    top :0;
+    background: rgb(126, 126, 126);
+    height: 100vh;
+    padding: 1em;   
+}
+nav .primary-nav{
+    margin-top: 2em;
+}
+nav .primary-nav li a{
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: .5em;
+    font-size: 1em;
+    position: relative;
+}
+.navbide nav ul ul li a{
+    padding: 1em 1em;
+}
+.navbide nav ul ul li{
+    position: relative;
+    margin: 0px;
+    width: auto;
+    background-color: rgb(126, 126, 126);
+}
+.navbide nav ul ul{
+    position: static;
+    padding-left: 20px;
+    display: none;
+}
+
+.navbide nav li a i{
+    font-size: 1.3em;
+    position: absolute;
+    right: 10%;
+}
+.navbide nav ul li.active a{
+    color: black;
+    background-color: rgb(126, 126, 126);
+}
+.navbide nav ul li.active ul li a{
+    color: rgb(255, 255, 255);
+    background-color: rgb(126, 126, 126);
+}
+.navbide nav ul li.active ul li a:hover{
+    color: black;
+    background-color: rgb(126, 126, 126);
+}
+.navbide nav li a i.rotate{
+    transform: rotate(-180deg);
+}
+nav ul .show-menu-TT.show{
+    display: block;
+}
+nav ul .show-menu-TC.show{
+    display: block;
+}
+nav ul .show-menu-LK.show{
+    display: block;
+}
+nav .secondary-nav{
+    display: flex;
+}
+nav .secondary-nav i{
+    font-size: 1.5em;
+   
+}
+nav .secondary-nav button i{
+    vertical-align:middle;
+}
+
+nav .secondary-nav button{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}   
+.mobile-menu-exit{
+    float: right;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+@media only screen and (min-width: 768px) {
+    .mobile-menu , .mobile-menu-exit{
+        display: none;
+    }
+    .navbide .container{
+        display: grid;
+        grid-template-columns: 180px auto;
+        justify-content: unset;
+    } 
+    .navbide nav{
+        display: flex;
+        justify-content: space-between;
+        background: none;
+        position: unset;
+        height: auto;
+        width: 100%;
+        padding: 0;
+        
+    }
+    .navbide nav ul{
+        display: flex;
+        position: relative;
+    }
+    .navbide nav ul li a{
+        color: black;
+        font-size: 1em;
+        padding: .1em 1em;
+    }
+    .navbide nav ul ul{
+        position: absolute;
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+    }
+    .navbide nav ul ul li a{
+        padding: 1em 1em;
+    }
+    .navbide nav ul ul li{
+        position: relative;
+        margin: 0px;
+        width: auto;
+        
+        background-color: white;
+        border-bottom:1px solid #c1bfbfb3 ;
+    }
+    .navbide nav li a i{
+        font-size: 1.3em;
+        position: absolute;
+        right: -5px;
+    }
+    .navbide nav ul li.active a{
+        color: rgb(2, 56, 248);
+        background-color: white;
+    }
+    .navbide nav ul li.active ul li a{
+        color: black;
+        background-color: white;
+    }
+    .navbide nav ul li.active ul li a:hover{
+        color: rgb(2, 56, 248);
+        background-color: white;
+    }
+    .navbide nav li a i.rotate{
+        transform: rotate(-180deg);
+    }
+    nav ul .show-menu-TT.show{
+        opacity: 1;
+        visibility: visible;
+    }
+    nav ul .show-menu-TC.show{
+        opacity: 1;
+        visibility: visible;
+    }
+    nav ul .show-menu-LK.show{
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .navbide nav ul li a:hover{
+        color: blue;
+        font-size: 1em;
+    }
+    nav .secondary-nav .seach input{
+        display: none;
+    }
+    .navbide nav .primary-nav{
+        margin: 0;
+    }
+    .hero .container .right-col{
+        font-size: 1em;
+    }
+    
+}
+@media only screen and (min-width: 1080px) {
+    .hero .container .left-col .content{
+        font-size: 2em;
+    }
+    .hero .container .left-col .subhead{
+        position: absolute;
+        left: 10%;
+        font-size: 2em;
+    }
+    .hero .container .right-col{
+        font-size: 1.5em;
+        padding: 0;   
+    }
+    .hero .container .right-col{
+        top:10%
+    }
+    .hero .container .right-col .colunm{
+        flex-direction: row;
+ 
+    }
+    nav .secondary-nav .seach input{
+        display: inline;
+        height: 28px;
+        width: 200px;
+    }
+    nav .container .logo{
+        font-size: 1.5em;
+    }
+    nav ul li a{
+        font-size: 1.5em;
+    }
+
+}
