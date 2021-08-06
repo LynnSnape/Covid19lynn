@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <script type="text/javascript" src="js/covidapi.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+</head>
+<body>
+    <div class="navbide">
+        <div class="container">
+            <a class="logo" href="#">NguyenTran<span>Tien</span></a>
+            <i id="mobile-cta" class='bx bx-menu mobile-menu' ></i>
+           
+            <nav>
+                <i id="mobile-exit" class='bx bx-exit mobile-menu-exit' ></i>
+                <ul class="primary-nav">
+                    
+                    <li class="active"> 
+                        <a href="#">Trang Chủ</a>
+                    </li>
+                    <li>
+                        <a href="#" class="TT-menu">Tin Tức
+                            <i class='bx bxs-chevron-down first-TT'></i>
+                        </a>
+                        <ul class="show-menu-TT">
+                            <li>
+                                <a href="#">Thế Giới</a>
+                            </li>
+                            <li>
+                                <a href="#">Việt Nam</a>
+                            </li>
+                            <li>
+                                <a href="#">Covid Today</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="TC-menu">Triệu Chứng
+                            <i class='bx bxs-chevron-down first-TC'></i>
+                        </a>
+                        <ul class="show-menu-TC">
+                            <li>
+                                <a href="#">Covid</a>
+                            </li>
+                            <li>
+                                <a href="#">Sốt Cao</a>
+                            </li>
+                            <li>
+                                <a href="#">Đột Quỵ</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"class="LK-menu" >Lời Khuyên
+                            <i class='bx bxs-chevron-down first-LL'></i>
+                        </a>
+                        <ul class="show-menu-LK">
+                            <li>
+                                <a href="#">Chống Covid</a>
+                            </li>
+                            <li>
+                                <a href="#">HIV/AIDS </a>
+                            </li>
+                            <li>
+                                <a href="#">Bệnh Nan Y</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Liên Hệ</a>
+                    </li>
+                </ul>
+
+                <ul class="secondary-nav">
+                    <div class="seach">
+                        <form action="#">
+                            <input type="text" placeholder="Search.." name="search">
+                            <button type="submit"><i class='bx bx-search'></i></button>
+                        </form>
+                    </div>
+                </ul>
+                
+            </nav>
+        </div>
+    </div>
+    <section class="hero">
+        <div class="container">
+            <div class="bg-covid">
+                <img src="img/SARS-CoV-2.png" alt="" height="100%" width="100%">
+            </div>
+            <div class="left-col">
+                <p class="content">
+                    Xin chào tất cả mọi người...
+                </p>
+                
+                <p class="subhead">I Am  <span class="type"></span></p>
+                <p class="content">
+
+                </p>
+            </div>
+            <div class="right-col">
+                <div class="colunm">
+                    <div class="one-colunm">
+                        <p class="Covid">Đất Nước: 
+                            <span>Việt Nam</span>
+                        </p>
+                        <p class="Covid">Ca Nhiễm:
+                            <span id="confirmed"></span>
+                        </p>
+                    </div>
+                    <div class="one-colunm">
+                        <p class="space">Bình Phục: 
+                            <span id="recovered"></span>
+                        </p>
+                        <p class="space">Tử Vong:
+                            <span id="deaths"></span>
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="js/typed.js"></script>
+        <script>
+            var typed = new Typed('.type', {
+            strings: ['<span class="underline">Developer  </span>',
+			'',
+			'<span class="underline">Designer  </span>',
+            '',
+			'<span class="underline">Doctor  </span>'],
+            typeSpeed: 60,
+            backSpeed: 40,
+            loop: true,
+            });
+    </script>    
+    <script>
+        const mobileBtn = document.getElementById('mobile-cta')
+              nav = document.querySelector('nav')
+              mobileBtnExit = document.getElementById('mobile-exit');
+
+        mobileBtn.addEventListener('click', () => {
+            nav.classList.add('menu-btn');
+        })
+
+        mobileBtnExit.addEventListener('click', () => {
+            nav.classList.remove('menu-btn');
+        })
+
+    </script> 
+    <script>
+        $('.TT-menu').click(function(){
+            $('nav ul .show-menu-TT').toggleClass("show");
+            $('nav ul .first-TT').toggleClass("rotate");
+            $('nav ul .show-menu-TC').removeClass("show");
+            $('nav ul .show-menu-LK').removeClass("show");
+
+            $('nav ul .first-TC').removeClass("rotate");
+            $('nav ul .first-LK').removeClass("rotate");
+           });
+        $('.TC-menu').click(function(){
+            $('nav ul .show-menu-TC').toggleClass("show");
+            $('nav ul .first-TC').toggleClass("rotate");
+
+            $('nav ul .show-menu-TT').removeClass("show");
+            $('nav ul .show-menu-LK').removeClass("show");
+
+            $('nav ul .first-TT').removeClass("rotate");
+            $('nav ul .first-LK').removeClass("rotate");
+           });
+        $('.LK-menu').click(function(){
+            $('nav ul .show-menu-LK').toggleClass("show");
+            $('nav ul .first-LK').toggleClass("rotate");
+
+            $('nav ul .show-menu-TT').removeClass("show");
+            $('nav ul .show-menu-TC').removeClass("show");
+
+            $('nav ul .first-TT').removeClass("rotate");
+            $('nav ul .first-TC').removeClass("rotate");
+           });
+        $('nav ul li').click(function(){
+            $(this).addClass("active").siblings().removeClass("active");
+      });
+    </script>
+</body>
+</html>
