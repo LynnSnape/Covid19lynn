@@ -17,9 +17,27 @@ function getCovid() {
             }
         });
         var list =data.Countries[index]
-        document.getElementById('confirmed').innerHTML= list.TotalConfirmed
-        document.getElementById('deaths').innerHTML= list.TotalDeaths
-        document.getElementById('recovered').innerHTML= list.TotalRecovered
+        var Confirmed= list.TotalConfirmed
+        var Deaths= list.TotalDeaths
+        var REcovered=list.TotalRecovered
+        if(Confirmed!=0){
+        document.getElementById('confirmed').innerHTML= Confirmed.toLocaleString("en-US")
+        }
+        else{
+            document.getElementById('confirmed').innerHTML= '------'
+        }
+        if(Deaths!=0){
+            document.getElementById('deaths').innerHTML= Deaths.toLocaleString("en-US")
+        }
+        else{
+            document.getElementById('deaths').innerHTML= '------'
+        }
+        if(REcovered!=0){
+            document.getElementById('recovered').innerHTML= REcovered.toLocaleString("en-US")
+        }
+        else{
+            document.getElementById('recovered').innerHTML= '------'
+        }
     })
     .catch(function() {
         console.log("error");

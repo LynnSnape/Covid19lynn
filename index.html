@@ -7,25 +7,27 @@
     <title>Document</title>
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <script type="text/javascript" src="js/covidapi.js"></script>
+    <script src="js/typed.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 </head>
 <body>
+
     <div class="navbide">
         <div class="container">
-            <a class="logo" href="#">NguyenTran<span>Tien</span></a>
+            <a class="logo" href="index.html">NguyenTran<span>Tien</span></a>
             <i id="mobile-cta" class='bx bx-menu mobile-menu' ></i>
            
             <nav>
                 <i id="mobile-exit" class='bx bx-exit mobile-menu-exit' ></i>
                 <ul class="primary-nav">
                     
-                    <li class="active"> 
+                    <li class="home active"> 
                         <a href="#">Trang Chủ</a>
                     </li>
                     <li>
-                        <a href="#" class="TT-menu">Tin Tức
+                        <a  class="TT-menu">Tin Tức
                             <i class='bx bxs-chevron-down first-TT'></i>
                         </a>
                         <ul class="show-menu-TT">
@@ -41,7 +43,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#" class="TC-menu">Triệu Chứng
+                        <a  class="TC-menu">Triệu Chứng
                             <i class='bx bxs-chevron-down first-TC'></i>
                         </a>
                         <ul class="show-menu-TC">
@@ -57,8 +59,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#"class="LK-menu" >Lời Khuyên
-                            <i class='bx bxs-chevron-down first-LL'></i>
+                        <a  class="LK-menu" >Lời Khuyên
+                            <i class='bx bxs-chevron-down first-LK'></i>
                         </a>
                         <ul class="show-menu-LK">
                             <li>
@@ -80,8 +82,8 @@
                 <ul class="secondary-nav">
                     <div class="seach">
                         <form action="#">
-                            <input type="text" placeholder="Search.." name="search">
-                            <button type="submit"><i class='bx bx-search'></i></button>
+                            <input class="search" type="text" placeholder="Search.." name="search">
+                            <button class="btn-search" type="submit"><i class='bx bx-search'></i></button>
                         </form>
                     </div>
                 </ul>
@@ -89,9 +91,11 @@
             </nav>
         </div>
     </div>
-    <section class="hero">
+
+    
+    <section class="hero pad-1">
         <div class="container">
-            <div class="bg-covid">
+            <div class="bg-covid"  id="particles-js">
                 <img src="img/SARS-CoV-2.png" alt="" height="100%" width="100%">
             </div>
             <div class="left-col">
@@ -107,7 +111,7 @@
             <div class="right-col">
                 <div class="colunm">
                     <div class="one-colunm">
-                        <p class="Covid">Đất Nước: 
+                        <p class="Covid">Quốc Gia: 
                             <span>Việt Nam</span>
                         </p>
                         <p class="Covid">Ca Nhiễm:
@@ -129,32 +133,288 @@
     </section>
 
 
+    <section class="s2 pad-1">
+        <div class="Graphing">
+            <div class="radius" id="chart"></div>
+            <div class="listtop">
+                <div class="TOP radius">
+                    <div class="title">
+                        <p>
+                            TOP 10 nước bị nhiễm Covid nhiều nhất
+                        </p>
+                    </div>
+                    <table class="table-countries" id="table-countries">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Quốc Gia
+                                </th>
+                                <th>
+                                    Ca Nhiễm
+                                </th>
+                                <th>
+                                    Bình Phục
+                                </th>
+                                <th>
+                                    Tử Vong
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>---</td>
+                                <td>---</td>
+                                <td>---</td>
+                                <td>---</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="tintuc radius">
+            <div class="title">
+                <p>Tin Tức Nổi Bật Về Covid</p>
+            </div>
+            <div class="content">
+                <div class="ct-1">
+                    <div class="nguon">
+                        <p>
+                            www.unicef.org
+                        </p>
+                    </div>
+                    <a href="#">
+                        <p>COVAX hỗ trợ thêm 1,18 triệu liều vắc-xin COVID-19 cho Việt Nam</p>
+                        <div class="rightimg">
+                            <img src="img/1.jpg" height="100%" width="100%">
+                        </div>
+                    </a>
+                </div>
+                <div class="ct-1">
+                    <div class="nguon">
+                        <p>
+                            vietnamnet.vn
+                        </p>
+                    </div>
+                    <a href="#">
+                        <p>Nanogen nâng cấp thuốc viêm gan để thử nghiệm điều trị Covid-19</p>
+                        <div class="rightimg">
+                            <img src="img/2.jpg" height="100%" width="100%">
+                        </div>
+                    </a>
+                </div>
+                <div class="ct-1">
+                    <div class="nguon">
+                        <p>
+                            baochinhphu.vn
+                        </p>
+                    </div>
+                    <a href="#">
+                        <p>Việt Nam – Thụy Sĩ đẩy mạnh hợp tác về vaccine, phát triển bền vững, quản trị hiện đại, tất cả vì cuộc sống người dân</p>
+                        <div class="rightimg">
+                            <img src="img/3.jpg" height="100%" width="100%">
+                        </div>
+                    </a>
+                </div>
+                <div class="ct-1">
+                    <div class="nguon">
+                        <p>
+                            moh.gov.vn
+                        </p>
+                    </div>
+                    <a href="#">
+                        <p>Dồn sức điều trị, tiêm chủng ở TP Hồ Chí Minh
+                        </p>
+                        <div class="rightimg">
+                            <img src="img/4.jpg" height="100%" width="100%">
+                        </div>
+                    </a>
+                </div><div class="ct-1">
+                    <div class="nguon">
+                        <p>
+                            moh.gov.vn
+                        </p>
+                    </div>
+                    <a href="#">
+                        <p>USAID và CDC Hoa Kỳ cam kết tiếp tục hỗ trợ Việt Nam phòng, chống COVID-19
+                        </p>
+                        <div class="rightimg">
+                            <img src="img/5.jpg" height="100%" width="100%">
+                        </div>
+                    </a>
+                </div>
 
+            </div>
+        </div>
+    </section>
 
+    <section class="s3 pad-1">
+           <div class="phongchong radius">
+                <div class="title">
+                    <p>Cách Phòng Chống Covid Hiệu quả</p>
+                </div>
+                <div class="list5k">
+                    <ul>
+                        <li>
+                            <i class='bx bx-check'></i> Thường xuyên rửa tay đúng cách bằng xà phòng dưới vòi nước sạch, hoặc bằng dung dịch sát khuẩn có cồn (ít nhất 60% cồn).
+                        </li>
+                        <li>
+                            <i class='bx bx-check'></i> Đeo khẩu trang nơi công cộng, trên phương tiện giao thông công cộng và đến cơ sở y tế.
+                        </li>
+                        <li>
+                            <i class='bx bx-check'></i> Tránh đưa tay lên mắt, mũi, miệng. Che miệng và mũi khi ho hoặc hắt hơi bằng khăn giấy, khăn vải, khuỷu tay áo.
+                        </li>
+                        <li>
+                            <i class='bx bx-check'></i> Tăng cường vận động, rèn luyện thể lực, dinh dưỡng hợp lý xây dựng lối sống lành mạnh.
+                        </li>
+                        <li>
+                            <i class='bx bx-check'></i> Vệ sinh thông thoáng nhà cửa, lau rửa các bề mặt hay tiếp xúc.
+                        </li>
+                        <li>
+                            <i class='bx bx-check'></i> Nếu bạn có dấu hiệu sốt, ho, hắt hơi, và khó thở, hãy tự cách ly tại nhà, đeo khẩu trang và gọi cho cơ sở y tế gần nhất để được tư vấn, khám và điều trị.
+                        </li>
+                        <li>
+                            <i class='bx bx-check'></i> Tự cách ly, theo dõi sức khỏe, khai báo y tế đầy đủ nếu trở về từ vùng dịch.
+                        </li>
+                        <li>
+                            <i class='bx bx-check'></i> Thực hiện khai báo y tế trực tuyến tại <a href="https://tokhaiyte.vn" target="_blank">https://tokhaiyte.vn</a> hoặc tải ứng dụng NCOVI từ địa chỉ <a href="https://ncovi.vn" target="_blank">https://ncovi.vn</a> và thường xuyên cập nhật tình trạng sức khoẻ của bản thân.
+                        </li>
+                        <li>
+                            <i class='bx bx-check'></i> Cài đặt ứng dụng Bluezone để được cảnh báo nguy cơ lây nhiễm COVID-19, giúp bảo vệ bản thân và gia đình: <a href="https://www.bluezone.gov.vn/" target="_blank">https://www.bluezone.gov.vn/</a>.
+                        </li>
 
+                    </ul>   
+                </div>
+            </div>
+           </div>
+           <div class="mains3 radius ">
+            <div class="k5">
+                <div class="title">
+                    <p>Quy Tắc 5K cần lưu ý:</p>
+                </div>
 
+                <div class="list5k">
+                    <ul>
+                        <li>
+                            <i class='bx bx-check'></i> <span>KHẨU TRANG </span>: Đeo khẩu trang vải thường xuyên tại nơi công cộng
+                        </li>
+                        <li>
+                            <i class='bx bx-check'></i> <span>KHỬ KHUẨN </span>: Rửa tay thường xuyên bằng xà phòng hoặc dung dịch sát khuẩn tay
+                        </li>
+                        <li>
+                            <i class='bx bx-check'></i> <span>KHOẢNG CÁCH </span>: Giữ khoảng cách khi tiếp xúc với người khác.
+                        </li>
+                        <li>
+                            <i class='bx bx-check'></i> <span>KHÔNG TỤ TẬP </span>:đông người.
+                        </li>
+                        <li>
+                            <i class='bx bx-check'></i> <span>KHAI BÁO Y TẾ </span>: thực hiện khai báo y tế trên App NCOVI; 
+                        </li>
+                    </ul>   
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="s4 pad-1 ">
+        <div class="s4-1 radius">
+            <div class="title">
+                <p>Lưu Ý Xử Phạt Vi Phạm Chỉ Thị 16</p>
+            </div>
+            <div class="list5k">
+                <ul>
+                    <li>
+                        <i class='bx bx-pencil'></i> 
+                        <span>RA ĐƯỜNG KHI KHÔNG CẦN THIẾT:</span>
+                        <p>1-3 triệu đồng</p>
+                    </li>
+                    <li>
+                        <i class='bx bx-pencil'></i> 
+                        <span>KHÔNG ĐEO KHẨU TRANG NƠI CÔNG CỘNG:</span>
+                        <p>1-3 triệu đồng</p>
+                    </li>
+                    <li>
+                        <i class='bx bx-pencil'></i> 
+                        <span>TỤ TẬP TỪ 3 NGƯỜI TRỞ LÊN:</span>
+                        <p>Cá Nhân : 10-20 triệu đồng</p>
+                        <p><span class="p-1">,</span>Tổ Chức : 20-40 triệu đồng</p>
+                    </li>
+                    <li>
+                        <i class='bx bx-pencil'></i> 
+                        <span>GIAO TIẾP DƯỚI 2M:</span>
+                        <p>1-3 triệu đồng</p>
+                    </li>
+                    <li>
+                        <i class='bx bx-pencil'></i> 
+                        <span>VỨT KHẨU TRANG KHÔNG ĐÚNG QUY ĐỊNH:</span>
+                        <p>Cảnh cáo hoặc phạt : 200-500 nghìn đồng</p>
+                    </li>
+                    <li>
+                        <i class='bx bx-pencil'></i> 
+                        <span>KHÔNG TẠM ĐÓNG CỬA KINH DOANH KHÔNG THIẾT YẾU:</span>
+                        <p>Cá Nhân : 10-20 triệu đồng</p>
+                        <p><span class="p-1">,</span>Tổ Chức : 20-40 triệu đồng</p>
+                        
+                    </li>
+                    <li>
+                        <i class='bx bx-pencil'></i> 
+                        <span>CHE GIẤU KHÔNG KHAI BÁO Y TẾ:</span>
+                        <p>10-20 triệu đồng</p>
+                        
+                    </li>
+    
+                </ul>   
+            </div>
+        </div>
+    </section>
 
+    <div class="footer radius">
+        <div class="ff-1">
+            <div class="ctn-1">
+                <p>
+                    Nguyễn Trần Tiến_2050531200310
+                </p>
+                <div class="design">
+                    <p>
+                        © Design By Lynn_Severus
+                    </p>
+                </div>
+            </div>
+            
 
+        <div class="ctn-2">
+                <div class="title">
+                    <p>Thông tin liên hệ</p>
+                </div>
+                <div class="ttlh">
+                    <p>
+                        <a href="https://www.facebook.com/LynnOwO/" target="_blank"><i class='bx bxl-facebook-circle' ></i> Lynn</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
 
+    <!--Particles-->
+    <script src="js/particles.js"></script>
+    <script src="js/app.js"></script>
 
-
-
-
-
-    <script src="js/typed.js"></script>
-        <script>
+    <!-- AUTO_TYPE-->
+    <script>
             var typed = new Typed('.type', {
             strings: ['<span class="underline">Developer  </span>',
 			'',
 			'<span class="underline">Designer  </span>',
             '',
-			'<span class="underline">Doctor  </span>'],
+			'<span class="underline">A Doctor  </span>'],
             typeSpeed: 60,
             backSpeed: 40,
             loop: true,
             });
-    </script>    
+    </script>
+
+    <!-- MOBILE_SHOW_NAV-->
     <script>
         const mobileBtn = document.getElementById('mobile-cta')
               nav = document.querySelector('nav')
@@ -169,6 +429,8 @@
         })
 
     </script> 
+    
+    <!-- JS_SHOW_NAV_SEARCH-->
     <script>
         $('.TT-menu').click(function(){
             $('nav ul .show-menu-TT').toggleClass("show");
@@ -201,7 +463,151 @@
            });
         $('nav ul li').click(function(){
             $(this).addClass("active").siblings().removeClass("active");
-      });
+        });
+        $('.btn-search').click(function(){
+            $('nav .secondary-nav .search').toggleClass("unhide-search");
+            $('nav .primary-nav').toggleClass("hide-nav");
+        });
+        $('.home')&&$('.logo').click(function(){
+            $('nav ul .show-menu-TT').removeClass("show");
+            $('nav ul .show-menu-TC').removeClass("show");
+            $('nav ul .show-menu-LK').removeClass("show");
+            $('nav ul .first-LK').removeClass("rotate");
+            $('nav ul .first-TT').removeClass("rotate");
+            $('nav ul .first-TC').removeClass("rotate");
+            $('nav .primary-nav').removeClass("hide-nav");
+            $('nav .secondary-nav .search').removeClass("unhide-search");
+        });
+        $('.hero').click(function(){
+            $('nav ul .show-menu-TT').removeClass("show");
+            $('nav ul .show-menu-TC').removeClass("show");
+            $('nav ul .show-menu-LK').removeClass("show");
+            $('nav ul .first-LK').removeClass("rotate");
+            $('nav ul .first-TT').removeClass("rotate");
+            $('nav ul .first-TC').removeClass("rotate");
+            $('nav .primary-nav').removeClass("hide-nav");
+            $('nav .secondary-nav .search').removeClass("unhide-search");
+        });
+    </script>
+
+    <!-- LINE_COVID-->
+    <script>
+        const url ='https://api.covid19api.com/dayone/country/vietnam'
+    async function getISS(){
+        const response =await fetch(url);
+        const data = await response.json();
+        var AConfirmed = new Array();
+        var ADeaths = new Array();
+        var ARecovered = new Array();
+        const ADate = new Array();
+        let i=0
+
+        
+        for(i; i < data.length; i++)
+        {
+            const { Confirmed,Deaths,Date,Recovered}=data[i];
+            const month = Date.split("-")[1];
+            const year = Date.split("-")[0];
+            var day = Date.split("-")[2][0]+Date.split("-")[2][1];
+                AConfirmed.push(Confirmed);
+                ADeaths.push(Deaths);
+                ADate.push(year+"-"+month+"-"+day);
+                ARecovered.push(Recovered);
+                
+        }
+        var options = {
+                chart: {
+                    height: 350,
+                    width:'100%',
+                    type: 'line',
+                    zoom: {
+                    enabled: false
+                },
+                    menu:{
+                    enabled:false
+                    },
+                },
+                series: [
+                        {
+                            name: "NHIỄM_BỆNH",
+                            data: AConfirmed,
+                            color:'#FF0000',
+                        },
+                        {
+                            name: "TỬ_VONG",
+                            data: ADeaths,
+                            color:'#000000',
+                        },
+                        {
+                            name: "PHỤC_HỒI",
+                            data: ARecovered,
+                            color:'#00FF00',
+                        }
+                        ],
+                xaxis: {
+                    categories: ADate
+                },
+                title: {
+                    text: 'Covid-19 In VietNam',
+                    align: 'center'
+                    },
+                    dataLabels: {
+                enabled: false
+                },
+                
+                dataLabels: {
+                    enabled: false
+                    },
+                }
+                
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+
+        chart.render();
+    }
+    getISS()
+    </script>
+    <!-- TOP_COVID-->
+    <script>
+        const URL_Top_Covid ='https://api.covid19api.com/summary'
+        async function Top_Covid(){
+            const response =await fetch(URL_Top_Covid);
+            const data = await response.json();
+            var list= data.Countries.sort((a,b) => b.TotalConfirmed-a.TotalConfirmed);
+
+
+            let tabele_countries= document.querySelector('#table-countries tbody')
+            tabele_countries.innerHTML= ''
+            for(let i =0;i<10;i++){
+                var CT=list[i].Country
+                let TC=list[i].TotalConfirmed.toLocaleString("en-US")
+                let TR=list[i].TotalRecovered.toLocaleString("en-US")
+                let TD=list[i].TotalDeaths.toLocaleString("en-US")
+                if(TR==0)
+                {
+                    TR='---------'
+                }
+                if(TC==0)
+                {
+                    TC='---------'
+                }
+                if(TD==0)
+                {
+                    TD='---------'
+                }
+                let row =`
+                    <tr>
+                        <td>${CT}</td>
+                        <td>${TC}</td>
+                        <td>${TR}</td>
+                        <td>${TD}</td>
+                    </tr>
+                `
+                tabele_countries.innerHTML+=row
+            }
+
+        }
+        Top_Covid();
     </script>
 </body>
 </html>
