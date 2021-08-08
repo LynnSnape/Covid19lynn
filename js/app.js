@@ -35,7 +35,7 @@ particlesJS('particles-js',
           "nb_sides": 5
         },
         "image": {
-          "src": "../img/covid19-1.png",
+          "src": "../img/6.png",
           "width": 100,
           "height": 100
         }
