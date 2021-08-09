@@ -77,7 +77,6 @@ ul{
 }
 .hero .container .left-col .content{
     font-size: 0.7em;
-    margin: 0 0 15px;
 }
 
 .hero .container .left-col{
@@ -128,10 +127,11 @@ nav .primary-nav li a{
     position: static;
     padding-left: 20px;
     display: none;
+    
 }
-.navbide nav ul li:hover{
-    border-left:1px solid #444444;
-    box-shadow:0 0 6px rgb(255, 255, 255,0.5);
+.navbide nav ul li:hover ul{
+    display: block;
+    
 }
 
 .navbide nav li a i{
@@ -151,18 +151,35 @@ nav .primary-nav li a{
     color: black;
     background-color: rgb(126, 126, 126);
 }
-.navbide nav li a i.rotate{
+.navbide nav li:hover a i{
     transform: rotate(-180deg);
 }
-nav ul .show-menu-TT.show{
-    display: block;
+.navbide nav ul li ul a:hover{
+    color: black;
+    
 }
-nav ul .show-menu-TC.show{
-    display: block;
+.navbide nav ul li ul a::before{
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    border: 2px solid transparent;
 }
-nav ul .show-menu-LK.show{
-    display: block;
+.navbide nav ul li ul a:hover::before{
+    animation: line-run 0.5s linear forwards;
 }
+.navbide nav ul li ul a::after{
+    content: "";
+    position: absolute;
+    right:1px;
+    bottom:1px;
+    border: 2px solid transparent;
+}
+.navbide nav ul li ul a:hover::after{
+    animation: line-run-2 0.5s linear forwards;
+    animation-delay: 0.5s;
+}
+
 nav .secondary-nav{
     display: flex;
 }
@@ -191,7 +208,10 @@ nav .secondary-nav button{
     display: block;
 
 }
-
+nav .secondary-nav .seach .search{
+    border: 1px solid #c1bfbfb3;
+    border-radius: 10px;
+}
 .radius{
     padding: 10px;
     border: 1px solid #dadce0;
@@ -251,6 +271,9 @@ nav .secondary-nav button{
     padding: 10px 0;
     border-bottom:1px solid #c1bfbfb3 ;
 }
+.ct-1:last-child{
+    border: none;
+}
 .ct-1 a{
     display: flex;
     font-size: 0.75em;
@@ -259,18 +282,33 @@ nav .secondary-nav button{
 .ct-1 a p{
     margin: auto 0;
     width:70%;
+    -webkit-transition: ease all 0.55s;
+    transition: ease all 0.55s;
+    display: block;
+    overflow: hidden;
 }
 .ct-1 .rightimg{
-    width: 25%;
+    width: 50%;
     height: 80px;
-    
-}
-.ct-1 a .rightimg img{
+    margin: 0 auto;
+    display: block;
+    overflow: hidden;
     border-radius: 10px;
+    -webkit-transition: ease all 0.55s;
+    transition: ease all 0.55s;
+}
+.ct-1 a:hover img{
+    
+    transform: scale(1.5);
+
+
+}
+.ct-1 a:hover p{
+    transform: scale(1.1);
 }
 .footer
 {   
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0[];
     width:100%;
     background-color: #e6e7e9;
     height: auto;
@@ -305,6 +343,10 @@ nav .secondary-nav button{
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------------------------------------------*/
 @media only screen and (min-width: 768px) {
+    .hero .container .left-col .content{
+        margin: 0 auto;
+        display: inline-block;
+    }
     nav{
         box-shadow: none;
     }
@@ -355,14 +397,18 @@ nav .secondary-nav button{
     }
     .navbide nav ul ul li a{
         padding: 1em 1em;
+        margin: 1px 0;
     }
     .navbide nav ul ul li{
         position: relative;
         margin: 0px;
         width: auto;
-        
+        left: 0;
         background-color: white;
         border-bottom:1px solid #c1bfbfb3 ;
+    }
+    .navbide nav ul ul li:last-child{
+        border-bottom:none;
     }
     .navbide nav li a i{
         font-size: 1.3em;
@@ -381,20 +427,33 @@ nav .secondary-nav button{
         color: rgb(2, 56, 248);
         background-color: white;
     }
-    .navbide nav li a i.rotate{
+    .navbide nav li:hover a i{
         transform: rotate(-180deg);
     }
-    nav ul .show-menu-TT.show{
+    .navbide nav li:hover ul{
         opacity: 1;
         visibility: visible;
+        transition: ease all 0.55s;
+        
+    }
+    .navbide nav ul li ul a::before{
+        left:-2px;
+        top:-2px;
+        border: 2px solid transparent;
+    }
+    .navbide nav ul li ul a::after{
+        right:-2px;
+        bottom:-2px;
+        border: 2px solid transparent;
+    }
+    nav ul .show-menu-TT.show{
+        display: none;
     }
     nav ul .show-menu-TC.show{
-        opacity: 1;
-        visibility: visible;
+        display: none;
     }
     nav ul .show-menu-LK.show{
-        opacity: 1;
-        visibility: visible;
+        display: none;
     }
     
     .navbide nav ul li a:hover{
@@ -549,6 +608,7 @@ nav .secondary-nav button{
     }
     nav .secondary-nav .seach .search{
         display: inline-block;
+       
     }
     .s2 .Graphing{
         width: 65%;
@@ -584,4 +644,63 @@ nav .secondary-nav button{
         display: inline;
     }
 
+}
+
+@keyframes line-run {
+    0%{
+        width: 0;
+        height: 0;
+        border-top-color: 100%;
+        border-right-color: transparent;
+        border-bottom-color:transparent;
+        border-left-color: transparent;
+
+    }
+    50%{
+        width: 100%;
+        height: 0;
+        border-top-color: #f71a1ad9;
+        border-right-color: #f71a1ad9;
+        border-bottom-color:transparent;
+        border-left-color: transparent;
+
+    }
+    100%{
+        width: 100%;
+        height: 100%;
+        border-top-color: #f71a1ad9;
+        border-right-color: #f71a1ad9;
+        border-bottom-color:transparent;
+        border-left-color: transparent;
+
+    }
+}
+@keyframes line-run-2 {
+    0%{
+        width: 0;
+        height: 0;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color:#f71a1ad9;
+        border-left-color: transparent;
+
+    }
+    50%{
+        width: 100%;
+        height: 0%;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color:#f71a1ad9;
+        border-left-color: #f71a1ad9;
+
+    }
+    100%{
+        width: 100%;
+        height: 100%;
+        border-top-color:transparent;
+        border-right-color: transparent;
+        border-bottom-color:#f71a1ad9;
+        border-left-color: #f71a1ad9;
+
+    }
 }

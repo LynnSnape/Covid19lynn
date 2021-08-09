@@ -16,7 +16,7 @@ particlesJS('particles-js',
 {
   "particles": {
     "number": {
-      "value": 80,
+      "value": 85,
       "density": {
         "enable": true,
         "value_area": 800
@@ -35,7 +35,7 @@ particlesJS('particles-js',
         "nb_sides": 5
       },
       "image": {
-        "src": "./img/covid19.png",
+        "src": "./img/covid19-1.png",
         "width": 100,
         "height": 100
       }
@@ -61,7 +61,7 @@ particlesJS('particles-js',
       }
     },
     "line_linked": {
-      "enable": true,
+      "enable": false,
       "distance": 150,
       "color": "#ff0000",
       "opacity": 0.4,
